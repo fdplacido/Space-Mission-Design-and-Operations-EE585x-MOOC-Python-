@@ -7,7 +7,7 @@ alpha = 0.2
 S = 1.4 # k*W/m^2
 stef_boltz = 5.67e-8 # W/(m^2*K^4)
 
-
+# not used
 def cylinderSurface(height, radius):
     return (2 * math.pi * math.pow(radius, 2)) + (2 * math.pi * radius * height)
 
