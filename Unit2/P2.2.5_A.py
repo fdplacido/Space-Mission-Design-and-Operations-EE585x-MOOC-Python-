@@ -1,17 +1,53 @@
+from Constants import constants as const
+import math
+
 deimos_m = 1.48e15  # kg
 deimos_r = 6.2 * 1000  # km - m
-g_constant = 6.67259e-11  # m^3*kg^-1*s^-2
-earth_r = 6.378e6  # m
-earth_m = 5.973e24  # kg
 
-deimos_g = g_constant * deimos_m / deimos_r**2
+deimos_g = const.g_const * deimos_m / deimos_r**2
 
 print(deimos_g)
 
-earth_g = g_constant * earth_m / earth_r**2
+earth_g = const.g_const * const.earth_r / const.earth_r**2
 
-deimos_depth = (g_constant * deimos_m) / (earth_g * deimos_r)
+deimos_depth = (const.g_const * deimos_m) / (earth_g * deimos_r)
 
-print(deimos_depth)
+print("Problem A: " + str(deimos_depth))
 
 # https://www.explainxkcd.com/wiki/index.php/681:_Gravity_Wells
+
+# Problem D
+
+geo_h = 35786 * 1000  # km
+
+dist = const.earth_r + geo_h
+
+v_esc = math.sqrt(2*const.earth_mu/dist)
+
+v_esc_km = v_esc/1000
+
+print("Problem D: " + str(v_esc_km))
+
+
+# Problem E
+
+pluto_m = 1.3e22  # kg
+pluto_r = 1200 * 1000  # km
+
+esc_v = math.sqrt(2*const.g_const*pluto_m/pluto_r)
+
+esc_v_km = esc_v/1000
+
+print("Problem E: " + str(esc_v_km))
+
+# Problem I
+
+hubble_d = 555 * 1000  # km - m
+
+dist = const.earth_r + hubble_d
+
+v_circ = math.sqrt(const.earth_mu/dist)
+
+v_circ_km = v_circ/1000
+
+print("Problem I: " + str(v_circ_km))
