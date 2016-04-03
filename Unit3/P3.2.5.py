@@ -11,7 +11,7 @@ import math
 del_r_LEO = 3.5  # Δv
 altitude_increase = 10  # Km
 
-delta_V_LEO = del_r_LEO / altitude_increase
+delta_V_LEO = altitude_increase / del_r_LEO
 
 print("Problem A: " + str(delta_V_LEO))
 
