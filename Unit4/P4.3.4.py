@@ -4,9 +4,13 @@ amplitude = 6.2  # Km/s
 deflection = 27  # deg
 v_before = 37.4  # Km/s
 
+# Problem A
+
 # v_before = v_after
 
 print("Problem A: " + str(amplitude))
+
+# Problem B
 
 total_deg = 90 + deflection
 

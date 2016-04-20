@@ -6,3 +6,4 @@ sun_mu = 1.327e20  # m^3 / s^2
 mars_dist_sun = 1.524  # au
 mars_mu = 4.269e13  # m^3 / s^2
 full_year = 365.242  # days
+jupiter_mu = 1.267e17  # m^3*s^-2
