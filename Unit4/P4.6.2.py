@@ -51,9 +51,9 @@ print("Problem B_2: " + str(v_depart))
 
 # e = v^2/2 - mu/r
 
-e = (v_depart**2)/2
+e = (v_d**2)/2
 
-print("Problem B_3: " + str(e))
+print("Problem B_3: " + str(e/(1000*1000)))
 
 # Problem B_4
 
@@ -66,7 +66,7 @@ energ = (v**2)/2 - const.sun_mu/jupiter_orbit_r
 
 energ = -const.sun_mu/(2*semi_major_a)
 
-print("Problem B_4: " + str(energ/1000))
+print("Problem B_4: " + str(energ/(1000*1000)))
 
 # Problem B_5
 
@@ -83,7 +83,7 @@ v_arrival = math.sqrt((2*const.sun_mu/jupiter_orbit_r) - (const.sun_mu/semi_majo
 
 v_arrival_excess = v_arrival - math.sqrt(const.sun_mu/jupiter_orbit_r)
 
-print("Problem b_6: " + str(v_arrival_excess/1000))
+print("Problem B_6: " + str(v_arrival_excess/1000))
 
 # Problem B_7
 
@@ -92,18 +92,29 @@ impact = 100000 * 1000  # Km -> m
 v_esc = math.sqrt(2 * const.jupiter_mu / impact)
 v_esc /= 1000
 
+v_p = math.sqrt(v_esc**2 + v_arrival_excess**2)
+
+print("Problem B_7: " + str(v_p/1000))
+
 # vp^2 = v_esc^2 + v_a^2
 
 # Problem C
 
 msl_mass = 4050  # Kg
-msl_alt = 200  # Km
-orb_vel = 7.78  # Km/s
-v_depart = 11.50  # Km/s
+msl_alt = 200 * 1000  # Km
+orb_vel = 7.78 * 1000  # Km/s
+v_depart = 11.50 * 1000 # Km/s
 isp = 320  # s
 m_exp = 5  # Kg/s
 
 # Tsiolkovsky
 
+# v = g * Isp * log (m / (m - mt))
 
+earth_g = const.earth_mu / (const.earth_r**2)
+first_m = earth_g * isp
+
+t = (msl_mass * (1 - math.exp(-orb_vel/first_m))) / m_exp
+
+print("Problem C: " + str(t))
 
