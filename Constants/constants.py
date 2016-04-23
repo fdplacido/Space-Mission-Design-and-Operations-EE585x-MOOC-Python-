@@ -7,3 +7,5 @@ mars_dist_sun = 1.524  # au
 mars_mu = 4.269e13  # m^3 / s^2
 full_year = 365.242  # days
 jupiter_mu = 1.267e17  # m^3*s^-2
+sideral_day = (23 * 60 * 60) + (56 * 60) + 4
+solar_constant = 1.367e3  # at 1 AU

@@ -116,5 +116,5 @@ first_m = earth_g * isp
 
 t = (msl_mass * (1 - math.exp(-orb_vel/first_m))) / m_exp
 
-print("Problem C: " + str(t))
+print("Problem C: " + str(t) + " -- Still wrong :(")
 
